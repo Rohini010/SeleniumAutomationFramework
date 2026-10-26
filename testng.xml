@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="automation framework" thread-count="4" parallel="methods">
+	<test name="API Automation framework">
+	
+		<parameter name="browser" value="${browser}" />				<!--${browser}  - used to access value from pom.xml -->
+		<parameter name="isHeadLess" value="${isHeadLess}" />	 	<!-- command line -> pom.xml -> testNG-->
+		<parameter name="isLambdaTest" value="${isLambdaTest}" />
+		
+		<classes>
+			<class name="com.ui.tests.CompleteOrderTest">
+				<methods>
+					<include name="completeOrder" />
+				</methods>
+			</class>
+		</classes>
+
+	</test>
+</suite>
